@@ -33,7 +33,7 @@
 		{
 			Id = Guid.NewGuid(); // تولید شناسه یکتا برای سفارش جدید
 			Items = items ?? throw new ArgumentNullException(nameof(items)); // بررسی مقدار نال بودن لیست آیتم‌ها
-			TotalPrice = items.Sum(i => i.Price); // محاسبه مجموع قیمت آیتم‌های سفارش
+			TotalPrice = items.Sum(i => i.Price * i.Quantity); // محاسبه مجموع قیمت آیتم‌های سفارش
 		}
 	}
 }
